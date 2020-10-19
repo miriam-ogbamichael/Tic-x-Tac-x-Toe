@@ -27,7 +27,7 @@
             <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
 
             <label for="sign-up-password-confirmation">Password Confirmation</label>
-            <input id="sign-up-password-confirmation" type="password" name="creditials[password-confirmation]" placeholder="Confirm Password">
+            <input id="sign-up-password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
 
             <input type="submit" value="Sign up!">
           </fieldset>
@@ -37,7 +37,7 @@
       <section>
         <form id="sign-in-form" class="border">
           <fieldset>
-            <legend>Sign in!</legend>
+            <legend>Welcome! Sign in here.</legend>
 
             <label for="sign-in-email">Email</label>
             <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
@@ -56,10 +56,10 @@
             <legend>Change password!</legend>
 
             <label for="old-password">Old password</label>
-            <input id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+            <input id="old-password" name="passwords[old]" type="password" placeholder="Old Password">
 
             <label for="new-password">New password</label>
-            <input id="new-password" type="password" name="passwords[new]" placeholder="New Password">
+            <input id="new-password" name="passwords[new]" type="password" placeholder="New Password">
 
             <input type="submit" value="Change Password!">
           </fieldset>
@@ -69,9 +69,9 @@
     <section>
       <form id="sign-out-form" class="border">
         <fieldset>
-          <legend>Sign out!</legend>
+          <legend>See yeah later!</legend>
 
-          <input id="sign-out-button" type="submit" name="Sign out!">
+          <input id="sign-out-button" type="submit" name="Sign out!" value="Sign out!">
         </fieldset>
       </form>
     </section>
@@ -79,31 +79,31 @@
     <section>
       <form id="new-game-form" class="border">
         <fieldset>
-          <legend>Now lets get this game started!</legend>
+          <legend>Lets get this game started!</legend>
 
-          <input id="new-game-button" type="submit" value="Start a New Game!">
+          <input id="new-game-button" type="submit" value="Start playing!">
         </fieldset>
       </form>
     </section>
 
-    <section class="container">
+    <div id="game-board-form" class="container">
       <div class= "row h-100 board">
 
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
+        <div id="0" class="col-4 box box" data-cell-index="0">?</div>
+        <div id="1" class="col-4 box box" data-cell-index="1">?</div>
+        <div id="2" class="col-4 box box" data-cell-index="2">?</div>
 
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
+        <div id="3" class="col-4 box box" data-cell-index="3">?</div>
+        <div id="4" class="col-4 box box" data-cell-index="4">?</div>
+        <div id="5" class="col-4 box box" data-cell-index="5">?</div>
 
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
-        <div class="col-4 box">X</div>
+        <div id="6" class="col-4 box box" data-cell-index="6">?</div>
+        <div id="7" class="col-4 box box" data-cell-index="7">?</div>
+        <div id="8" class="col-4 box box" data-cell-index="8">?</div>
 
 
       </div>
-    </section>
+    </div>
 
 
 
