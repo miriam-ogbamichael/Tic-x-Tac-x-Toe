@@ -4,7 +4,7 @@ const store = require('../store')
 
 const signUp = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/sighn-up',
+    url: config.apiUrl + '/sign-up',
     method: 'POST',
     data: data
   })
@@ -32,10 +32,10 @@ const changePassword = function (data) {
 const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
-    method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'DELETE'
   })
 }
 
