@@ -2,17 +2,29 @@
 const config = require('./../config')
 const store = require('./../store')
 
-const newGame = function (data) {
+const startPlaying = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/new-game',
+    url: config.apiUrl + '/game',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     method: 'POST',
-    data: ''
+    data: data
+  })
+}
+
+const gameBoard = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/game',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'GET',
+    data: data
   })
 }
 
 module.exports = {
-  newGame
+  startPlaying,
+  gameBoard
 }
