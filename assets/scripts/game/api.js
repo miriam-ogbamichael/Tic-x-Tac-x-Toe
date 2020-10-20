@@ -4,18 +4,18 @@ const store = require('./../store')
 
 const startPlaying = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/game',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     method: 'POST',
-    data: data
+    data: {}
   })
 }
 
 const gameBoard = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/game',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
