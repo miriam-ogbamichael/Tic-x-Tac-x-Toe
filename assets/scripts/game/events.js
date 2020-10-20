@@ -18,6 +18,17 @@ const onGameBoard = function (event) {
     // responseible for failed attempts
 }
 
+const onStartPlaying = function (event) {
+  event.preventDefault()
+  // prevents page form refreshing
+  api.startPlaying()
+    .then(ui.startPlayingSuccess)
+  // responseoble for successful responses
+    .catch(ui.startPlayingFailure)
+  // responseible for failed attempts
+}
+
 module.exports = {
-  onGameBoard
+  onGameBoard,
+  onStartPlaying
 }
