@@ -11,7 +11,105 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
+    <body class="container">
+      <h1>Tic x Tac x Toe</h1>
+      <p id="message"></p>
+
+      <section>
+        <form id="sign-up-form" class="border">
+          <fieldset>
+            <legend>Hi there! Lets get you signed up!</legend>
+
+            <label for="sign-up-email">Email</label>
+            <input id="sign-up-email" type="text" name="credentials[email]" placeholder="Email">
+
+            <label for="sign-up-password">Password</label>
+            <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+
+            <label for="sign-up-password-confirmation">Password Confirmation</label>
+            <input id="sign-up-password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <form id="sign-in-form" class="border">
+          <fieldset>
+            <legend>Welcome! Sign in here.</legend>
+
+            <label for="sign-in-email">Email</label>
+            <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
+
+            <label for="sign-in-password">Password</label>
+            <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <form id="change-password-form" class="border">
+          <fieldset>
+            <legend>Change password!</legend>
+
+            <label for="old-password">Old password</label>
+            <input id="old-password" name="passwords[old]" type="password" placeholder="Old Password">
+
+            <label for="new-password">New password</label>
+            <input id="new-password" name="passwords[new]" type="password" placeholder="New Password">
+
+            <input type="submit" value="Change Password!">
+          </fieldset>
+        </form>
+      </section>
+
+    <section>
+      <form id="sign-out-form" class="border">
+        <fieldset>
+          <legend>See yeah later!</legend>
+
+          <input id="sign-out-button" type="submit" name="Sign out!" value="Sign out!">
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <form id="new-game-form" class="border">
+        <fieldset>
+          <legend>Lets get this game started!</legend>
+
+          <input id="new-game-button" type="submit" value="Start playing!">
+        </fieldset>
+      </form>
+    </section>
+
+    <div id="game-board-form" class="container">
+      <div class= "row h-100 board">
+
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+        <div class="col-4 box"></div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
     </body>
 </html>

@@ -1,0 +1,30 @@
+
+const config = require('./../config')
+const store = require('./../store')
+
+const startPlaying = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/game',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'POST',
+    data: data
+  })
+}
+
+const gameBoard = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/game',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'GET',
+    data: data
+  })
+}
+
+module.exports = {
+  startPlaying,
+  gameBoard
+}
