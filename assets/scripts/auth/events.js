@@ -48,9 +48,24 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onStartPlaying = function (event) {
+  event.preventDefault()
+  // prevents page form refreshing
+  const form = event.target
+  // gets form from the event
+  const data = getFormFields(form)
+  // sends sata to the api
+  api.startPlaying(data)
+    .then(ui.newGameSuccess)
+  // responseoble for successful responses
+    .catch(ui.newGameFailure)
+  // responseible for failed attempts
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onStartPlaying
 }
