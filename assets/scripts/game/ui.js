@@ -1,10 +1,12 @@
+
 const store = require('./../store')
 
 const startPlayingSuccess = function (response) {
-  $('#message').text('Successfully started a new game! ' + response.user.token)
-  store.user = response.user
-  // $('#new-game-form').hide()
-  // $('#game-board-form').show()
+  $('#message').text('Successfully started a new game!')
+  console.log(response)
+  $('#change-password-form').hide()
+  $('#new-game-form').hide()
+  $('#game-board-form').show()
 }
 
 const startPlayingFailure = function () {
@@ -13,8 +15,8 @@ const startPlayingFailure = function () {
 
 const gameBoardSuccess = function () {
   $('#message').text('Successfully pulled up the game board!')
-  // $('#game-board-form').show()
-  // $('#new-game-form').hide()
+  $('#game-board-form').show()
+  $('#new-game-form').hide()
 }
 
 const gameBoardFailure = function () {
