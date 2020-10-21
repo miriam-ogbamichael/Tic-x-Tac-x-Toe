@@ -3,7 +3,7 @@ const store = require('./../store')
 
 const startPlayingSuccess = function (response) {
   $('#message').text('Successfully started a new game!')
-  console.log(response)
+  // console.log(response)
   $('#change-password-form').hide()
   $('#new-game-form').hide()
   $('#game-board-form').show()
