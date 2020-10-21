@@ -35,8 +35,8 @@ const signOutSuccess = function (response) {
   $('#message').text('You have signed out successfully!')
   store.user = null
   $('#change-password-form').hide()
-  $('#sign-out-form').hide()
-  $('#sign-up-form').hide()
+  $('#sign-out-form').show()
+  $('#sign-up-form').show()
   $('#sign-in-form').show()
   $('#new-game-form').hide()
   $('#game-board-form').hide()
