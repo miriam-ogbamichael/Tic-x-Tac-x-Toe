@@ -10,17 +10,16 @@ const gameEvents = require('./game/events')
 
 $(() => {
   // your JS code goes here
-  $('#sign-up-form').on('submit', authEvents.onSignUp)
-  $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out-form').on('submit', authEvents.onSignOut)
+  authEvents.addHandlers()
 
   $('#new-game-form').on('submit', gameEvents.onStartPlaying)
   $('#game-board-form').on('submit', gameEvents.onGameBoard)
+  $('#onUpdateGameBoard').on('submit', gameEvents.onUpdateGameBoard)
+  $('.board').on('click', gameEvents.onGameBoardClick)
 
-  $('#change-password-form').hide()
-  $('#sign-out-form').hide()
-  $('#sign-in-form').hide()
-  $('#new-game-form').hide()
-  $('#game-board-form').hide()
+  // $('#change-password-form').hide()
+  // $('#sign-out-form').hide()
+  // $('#sign-in-form').hide()
+  // $('#new-game-form').hide()
+  // $('#game-board-form').hide()
 })
