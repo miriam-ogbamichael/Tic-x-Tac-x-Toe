@@ -14,7 +14,7 @@
     <body class="container">
       <h1>Tic x Tac x Toe</h1>
       <p id="message"></p>
-
+      <!-- Sign up section -->
       <section>
         <form id="sign-up-form" class="border">
           <fieldset>
@@ -33,14 +33,14 @@
           </fieldset>
         </form>
       </section>
-
+      <!-- Sign in section -->
       <section>
         <form id="sign-in-form" class="border">
           <fieldset>
             <legend>Welcome! Sign in here.</legend>
 
             <label for="sign-in-email">Email</label>
-            <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
+            <input id="sign-in-email" type="text" name="credentials[email]" placeholder="Email">
 
             <label for="sign-in-password">Password</label>
             <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
@@ -49,7 +49,7 @@
           </fieldset>
         </form>
       </section>
-
+      <!-- Change password section -->
       <section>
         <form id="change-password-form" class="border">
           <fieldset>
@@ -65,7 +65,7 @@
           </fieldset>
         </form>
       </section>
-
+      <!-- Sign out section -->
     <section>
       <form id="sign-out-form" class="border">
         <fieldset>
@@ -75,7 +75,7 @@
         </fieldset>
       </form>
     </section>
-
+    <!-- New game section -->
     <section>
       <form id="new-game-form" class="border">
         <fieldset>
@@ -85,21 +85,21 @@
         </fieldset>
       </form>
     </section>
-
+    <!-- Game board section -->
     <div id="game-board-form" class="container">
-      <div class= "row h-100 board">
+      <div class="row h-100">
 
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
+        <div id="box0" class="col-4 box" data-cell-index="0">?</div>
+        <div id="box1" class="col-4 box" data-cell-index="1">?</div>
+        <div id="box2" class="col-4 box" data-cell-index="2">?</div>
 
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
+        <div id="box3" class="col-4 box" data-cell-index="3">?</div>
+        <div id="box4" class="col-4 box" data-cell-index="4">?</div>
+        <div id="box5" class="col-4 box" data-cell-index="5">?</div>
 
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
-        <div class="col-4 box"></div>
+        <div id="box6" class="col-4 box" data-cell-index="6">?</div>
+        <div id="box7" class="col-4 box" data-cell-index="7">?</div>
+        <div id="box8" class="col-4 box" data-cell-index="8">?</div>
 
       </div>
     </div>
