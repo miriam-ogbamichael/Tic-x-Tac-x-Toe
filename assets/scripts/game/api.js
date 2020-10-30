@@ -13,7 +13,7 @@ const startPlaying = function (data) {
   })
 }
 
-const gameBoard = function (data) {
+const getGameBoard = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {
@@ -24,7 +24,27 @@ const gameBoard = function (data) {
   })
 }
 
+const updateGameBoard = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'PATCH',
+    data: {
+      game: {
+        cell: {
+          index: data.index,
+          value: data.player
+        },
+        over: data.over
+      }
+    }
+  })
+}
+
 module.exports = {
   startPlaying,
-  gameBoard
+  getGameBoard,
+  updateGameBoard
 }
