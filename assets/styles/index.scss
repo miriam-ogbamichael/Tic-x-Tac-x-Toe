@@ -1,18 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
 
 .container {
-  height: 100vh;
+  height: 75vh;
 }
 
 .board {
   background-size: cover;
   margin: auto;
-  max-height: calc(100vh - 75px);
-  max-width: calc(100vh - 75px);
+  max-height: calc(75vh - 75px);
+  max-width: calc(75vh - 75px);
 }
 
-
 .box {
+  // border: 3px solid black;
+  // height: 300px;
+  // width: 300px;
+
   align-items: center;
   background-color: white;
   border-bottom: 1px solid black;
@@ -36,5 +39,14 @@
   &:hover {
     background-color: #32cd32;
   }
+}
 
+// centers h1 header
+h1 {
+  text-align: center;
+}
+
+// centers all the sections of our index.html file
+section {
+  text-align: center;
 }
