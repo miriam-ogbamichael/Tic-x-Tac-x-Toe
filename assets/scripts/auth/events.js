@@ -1,56 +1,83 @@
-
+// requires getFormFields file to be used in this file
 const getFormFields = require('./../../../lib/get-form-fields')
 
-const ui = require('./ui')
+// requires api file to be used in this file
 const api = require('./api')
+// requires ui file to be used in this file
+const ui = require('./ui')
 
+// SIGN UP functionality
 const onSignUp = function (event) {
-  event.preventDefault() // prevents default action of refreshing page
+  // prevents default action of refreshing page
+  event.preventDefault()
+  console.log('sign up ran!')
 
-  const form = event.target
-
-  const data = getFormFields(form) // send data from form to the API
+  // send data from form to the API
+  const data = getFormFields(event.target)
+  // logged event.target
+  console.log('event.target is', event.target)
+  // logged event
+  console.log('event is', event)
 
   api.signUp(data)
-    .then(ui.signUpSuccess) // responsible for successful inputs
-    .catch(ui.signUpFailure) // responsible for failed inputs
+    // responsible for successful inputs
+    .then(ui.signUpSuccess)
+    // responsible for failed inputs
+    .catch(ui.signUpFailure)
 }
 
+// SIGN IN functionality
 const onSignIn = function (event) {
+  // prevents default action of refreshing page
   event.preventDefault()
+  console.log('sign in ran!')
 
-  const form = event.target
-
-  const data = getFormFields(form)
+  // send data from form to the API
+  const data = getFormFields(event.target)
 
   api.signIn(data)
+    // responsible for successful inputs
     .then(ui.signInSuccess)
+    // responsible for failed inputs
     .catch(ui.signInFailure)
 }
 
+// CHANGE PASSWORD functionality
 const onChangePassword = function (event) {
+  // prevents default action of refreshing page
   event.preventDefault()
+  console.log('change password ran!')
 
-  const form = event.target
-
-  const data = getFormFields(form)
+  // send data from form to the API
+  const data = getFormFields(event.target)
 
   api.changePassword(data)
+    // responsible for successful inputs
     .then(ui.changePasswordSuccess)
+    // responsible for failed inputs
     .catch(ui.changePasswordFailure)
 }
 
+// SIGN OUT functionality
 const onSignOut = function (event) {
+  // prevents default action of refreshing page
   event.preventDefault()
+  console.log('sign out ran!')
 
   api.signOut()
+    // responsible for successful inputs
     .then(ui.signOutSuccess)
+    // responsible for failed inputs
     .catch(ui.signOutFailure)
 }
 
+const addHandlers = () => {
+  $('#sign-up-form').on('submit', onSignUp)
+  $('#sign-in-form').on('submit', onSignIn)
+  $('#change-password-form').on('submit', onChangePassword)
+  $('#sign-out-form').on('submit', onSignOut)
+}
+
 module.exports = {
-  onSignUp,
-  onSignIn,
-  onChangePassword,
-  onSignOut
+  addHandlers
 }
