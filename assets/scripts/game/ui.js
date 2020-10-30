@@ -20,12 +20,22 @@ const gameBoardSuccess = function () {
 }
 
 const gameBoardFailure = function () {
-  $('#message').text('Oops, there is a an error with the game board')
+  $('#message').text('Oops, there is a an error with the game board.')
+}
+
+const onUpdateGameBoardSuccess = function () {
+  $('#message').text('Succeffully updated the game board!')
+}
+
+const onUpdateGameBoardFailure = function () {
+  $('#message').text('Oops, there is a an error updating the game board.')
 }
 
 module.exports = {
   startPlayingSuccess,
   startPlayingFailure,
   gameBoardSuccess,
-  gameBoardFailure
+  gameBoardFailure,
+  onUpdateGameBoardSuccess,
+  onUpdateGameBoardFailure
 }
