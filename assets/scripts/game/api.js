@@ -2,31 +2,34 @@
 const config = require('./../config')
 const store = require('./../store')
 
-const startPlaying = function (data) {
+// POST ajax request for creating a new game using
+const startPlaying = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     method: 'POST',
-    data: {}
+    data: ''
   })
 }
 
-const getGameBoard = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    method: 'GET',
-    data: data
-  })
-}
+// // GET ajax request for
+// const getGameBoard = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     },
+//     method: 'GET',
+//     data: data
+//   })
+// }
 
-const updateGameBoard = function (data) {
+// PATCH ajax request for updating game board duirng games
+const updateGameBoard = function (index, value, over) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game._id,
+    url: config.apiUrl + `/games/${store.game.id}`,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -34,10 +37,10 @@ const updateGameBoard = function (data) {
     data: {
       game: {
         cell: {
-          index: data.index,
-          value: data.player
+          index: index,
+          value: value
         },
-        over: data.over
+        over: over
       }
     }
   })
@@ -45,6 +48,6 @@ const updateGameBoard = function (data) {
 
 module.exports = {
   startPlaying,
-  getGameBoard,
+  // getGameBoard,
   updateGameBoard
 }
