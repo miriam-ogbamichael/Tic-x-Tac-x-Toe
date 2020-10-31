@@ -1,51 +1,81 @@
 
 const store = require('../store')
+const ui = require('./ui')
 
-// const switchPlayer = function () {
-//   console.log('in switch player')
-//   if (store.currentPlayer === 'X') {
-//     store.currentPlayer = 'O'
-//   } else {
-//     store.currentPlayer = 'X'
-//   }
-// }
-//
-// const checkForWinner = function () {
-//   console.log('board is', store.board)
-//   // if all elements in top row are equal and NOT AN EMPTY STRING
-//   if (store.board[0] === store.board[1]
-//     && store.board[1] === store.board[2]
-//     && store.board[0] !== '')
-//         console.log('first row wins')
-//         return
-//       }
-//
-//   if ((store.board[3] === store.board[4]
-//     && store.board[4] === store.board[5]
-//     && store.board[3] !== '')
-//     //  console.log('second row wins')
-//     //  return
+// sets up game board array
+store.board = ['', '', '',
+  '', '', '',
+  '', '', '']
+// sets current player to always have X to start the game
+store.currentPlayer = 'X'
+// stores how the game becomes over
+store.gameOver = false
 
+// functionality for switching between 'X' and 'O' for currentPlayer
+const switchPlayer = function () {
+  // store the fact that the game started with 'X'
+  if (store.currentPlayer === 'X') {
+    // After 'X' goes, store the fact that it's now 'Os' turn
+    store.currentPlayer = 'O'
+    // after 'O' goes, store the fact it went, and make the next turn be 'X' now
+  } else {
+    store.currentPlayer = 'X'
+  }
+}
 
-// module.exports = {
-//   switchPlayer,
-//   checkForWinner
-// }
-// $(() => {
-//   let currentPlayer = 'x' // Makes the x be the first move
-//
-//   const onBoxClick = (event) => { // event handler for when box is clicked
-//     console.log('click')
-//
-//     const box = $(event.target) // specifically selects the box player clicks
-//
-//     box.css('background', 'transparent').text(currentPlayer)
-//
-//     currentPlayer = currentPlayer === '0' ? 'x' : '0'
-//     // Interchangable current players
-//   }
-//
-//   $('.box').on('click', onBoxClick)
-//   // Put an event listener on all the boxes that when any of the boxes are
-//   // clicked, the 'onBoxClick' eventhandler is called upon.
-// })
+// reset board functionality
+const resetBoard = function () {
+  // store the fact that the game started with 'X'
+  store.currentPlayer = 'X'
+  // store the fact that the game board array is full
+  store.board.fill('')
+  // store the fact that when the game is over and
+  store.gameOver = false
+  $('.box').text('')
+}
+
+// the functionality for all the possible conditions to a winner
+const checkForWinner = function () {
+  console.log('checkForWinner worked!', checkForWinner)
+  const winner =
+
+  // TOP HORIZONTAL WINNER CONDITION
+    (store.board[0] === store.board[1] && store.board[1] === store.board[2] && store.board[0] !== '') ||
+    // MIDDLE HORIZONTAL WINNER CONDITION
+    (store.board[3] === store.board[4] && store.board[4] === store.board[5] && store.board[4] !== '') ||
+    // BOTTOM HORIZONTAL WINNER CONDITION
+    (store.board[6] === store.board[7] && store.board[7] === store.board[8] && store.board[7] !== '') ||
+
+    // DIAGONAL WINNER CONDITION STARTING FROM TOP LEFT SQUARE
+    (store.board[0] === store.board[4] && store.board[4] === store.board[8] && store.board[0] !== '') ||
+    // DIAGONAL WINNER CONDITION STARTING FROM TOP RIGHT SQUARE
+    (store.board[2] === store.board[4] && store.board[4] === store.board[6] && store.board[2] !== '') ||
+
+    // LEFT VERTICAL WINNER CONDITION
+    (store.board[0] === store.board[3] && store.board[3] === store.board[6] && store.board[0] !== '') ||
+    // MIDDLE VERTICAL WINNER CONDITION
+    (store.board[1] === store.board[4] && store.board[4] === store.board[7] && store.board[1] !== '') ||
+    // RIGHT VERTICAL WINNER CONDITION
+    (store.board[2] === store.board[5] && store.board[5] === store.board[8] && store.board[2] !== '')
+
+  // tie condition functionality
+  const tie = store.board.every(position => {
+    return position !== ''
+  })
+
+  // if a winner is determined, show the message that the ui has stored for the winning condition
+  if (winner) {
+    ui.winner()
+    console.log('winner happened!')
+  // if a tie is determined, show the message that the ui has stored for the tie condition
+  } else if (tie) {
+    ui.tie()
+  }
+}
+
+// export functions to be used in other files
+module.exports = {
+  switchPlayer,
+  checkForWinner,
+  resetBoard
+}
