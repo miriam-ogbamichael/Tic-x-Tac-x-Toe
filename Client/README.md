@@ -40,8 +40,7 @@ To tackle this Tic x Tac x Toe application, I had to start thinking like a senio
 
 ## Unsolved Problems to Be Fixed
 
-- Hiding the sign-out form once the user has successfully signed out.
-- Clearing all of the entry forms once the user has finished using them.
+- A quick less than one second flash pop up of the game stats form appears when users sign in fails that needs to be fixed.
 
 
 ## Wireframe 
