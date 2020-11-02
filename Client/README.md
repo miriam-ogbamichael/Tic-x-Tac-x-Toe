@@ -26,7 +26,7 @@ To tackle this Tic x Tac x Toe application, I had to start thinking like a senio
 - As a returning user, I want to be notified when I have successfully signed out so that I have confirmation of my sign-out.
 - As a player, I want to be able to start a new game so that I can begin having fun playing Tic x Tac x Toe.
 - As a player, I want to be notified when I win, tie, or lose a game so that I know when I have won, tied, or lost the game.
-- As a player, I want to be able to 
+- As a player, I want to be able to get the statistics of my game so that I know how many times I've played the game.
 
 ## Technologies Used
 
