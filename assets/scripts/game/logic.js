@@ -1,15 +1,8 @@
-
+// requires store file to be used in this file
 const store = require('../store')
-const ui = require('./ui')
 
-// sets up game board array
-store.board = ['', '', '',
-  '', '', '',
-  '', '', '']
-// sets current player to always have X to start the game
-store.currentPlayer = 'X'
-// stores how the game becomes over
-store.gameOver = false
+// requires ui file to be used in this file
+const ui = require('./ui')
 
 // functionality for switching between 'X' and 'O' for currentPlayer
 const switchPlayer = function () {
@@ -36,10 +29,9 @@ const resetBoard = function () {
 
 // the functionality for all the possible conditions to a winner
 const checkForWinner = function () {
-  console.log('checkForWinner worked!', checkForWinner)
   const winner =
 
-  // TOP HORIZONTAL WINNER CONDITION
+    // TOP HORIZONTAL WINNER CONDITION
     (store.board[0] === store.board[1] && store.board[1] === store.board[2] && store.board[0] !== '') ||
     // MIDDLE HORIZONTAL WINNER CONDITION
     (store.board[3] === store.board[4] && store.board[4] === store.board[5] && store.board[4] !== '') ||
@@ -66,7 +58,6 @@ const checkForWinner = function () {
   // if a winner is determined, show the message that the ui has stored for the winning condition
   if (winner) {
     ui.winner()
-    console.log('winner happened!')
   // if a tie is determined, show the message that the ui has stored for the tie condition
   } else if (tie) {
     ui.tie()
