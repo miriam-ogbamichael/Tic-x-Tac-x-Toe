@@ -1,5 +1,7 @@
-
+// requires config file to be used in this file
 const config = require('./../config')
+
+// requires store file to be used in this file
 const store = require('./../store')
 
 // POST ajax request for creating a new game using
@@ -14,22 +16,22 @@ const startPlaying = function () {
   })
 }
 
-// // GET ajax request for
-// const getGameBoard = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     method: 'GET',
-//     data: data
-//   })
-// }
+// GET ajax request for
+const userGameStats = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'GET',
+    data: {}
+  })
+}
 
 // PATCH ajax request for updating game board duirng games
-const updateGameBoard = function (index, value, over) {
+const updateGameBoard = function (index, value, gameOver) {
   return $.ajax({
-    url: config.apiUrl + `/games/${store.game.id}`,
+    url: config.apiUrl + `/games/${store.game._id}`,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -40,14 +42,15 @@ const updateGameBoard = function (index, value, over) {
           index: index,
           value: value
         },
-        over: over
+        over: gameOver
       }
     }
   })
 }
 
+// exports all fucntions used in this file so that they can be used in other files
 module.exports = {
   startPlaying,
-  // getGameBoard,
+  userGameStats,
   updateGameBoard
 }

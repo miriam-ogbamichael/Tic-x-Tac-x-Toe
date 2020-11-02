@@ -10,14 +10,9 @@ const ui = require('./ui')
 const onSignUp = function (event) {
   // prevents default action of refreshing page
   event.preventDefault()
-  console.log('sign up ran!')
 
   // send data from form to the API
   const data = getFormFields(event.target)
-  // logged event.target
-  console.log('event.target is', event.target)
-  // logged event
-  console.log('event is', event)
 
   api.signUp(data)
     // responsible for successful inputs
@@ -30,7 +25,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   // prevents default action of refreshing page
   event.preventDefault()
-  console.log('sign in ran!')
+  $('#user-game-stats-form').show()
 
   // send data from form to the API
   const data = getFormFields(event.target)
@@ -46,7 +41,6 @@ const onSignIn = function (event) {
 const onChangePassword = function (event) {
   // prevents default action of refreshing page
   event.preventDefault()
-  console.log('change password ran!')
 
   // send data from form to the API
   const data = getFormFields(event.target)
@@ -62,7 +56,6 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   // prevents default action of refreshing page
   event.preventDefault()
-  console.log('sign out ran!')
 
   api.signOut()
     // responsible for successful inputs
@@ -76,10 +69,9 @@ const addHandlers = () => {
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-form').on('submit', onSignOut)
-
-  // $('#change-password-form').hide()
-  // $('#sign-out-form').hide()
-  // $('#sign-in-form').hide()
+  $('#change-password-form').hide()
+  $('#sign-out-form').hide()
+  $('#sign-in-form').show()
 }
 
 module.exports = {
