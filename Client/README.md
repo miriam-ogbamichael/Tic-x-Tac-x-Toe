@@ -4,7 +4,7 @@ This application allows the user to sign-in, sign-up, change their password, and
 
 
 ## Important Links
-- [Deployed Client](https://miriam-ogbamichael.github.io/TicxTacxToe/)
+- [Deployed Client](https://miriam-ogbamichael.github.io/Tic-x-Tac-x-Toe/)
 
 
 ## Planning | Development | Problem Solving 
