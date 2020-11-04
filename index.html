@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container">
+      <h1>Tic x Tac x Toe</h1>
+      <p id="message"></p>
+      <!-- Sign up section -->
+      <section>
+        <form id="sign-up-form" class="border">
+          <fieldset>
+            <legend>Hi there! Lets get you signed up!</legend>
+
+            <label for="sign-up-email">Email</label>
+            <input id="sign-up-email" type="text" name="credentials[email]" placeholder="Email">
+
+            <label for="sign-up-password">Password</label>
+            <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+
+            <label for="sign-up-password-confirmation">Password Confirmation</label>
+            <input id="sign-up-password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </section>
+      <!-- Sign in section -->
+      <section>
+        <form id="sign-in-form" class="border">
+          <fieldset>
+            <legend>Welcome! Sign in here.</legend>
+
+            <label for="sign-in-email">Email</label>
+            <input id="sign-in-email" type="text" name="credentials[email]" placeholder="Email">
+
+            <label for="sign-in-password">Password</label>
+            <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </section>
+      <!-- Change password section -->
+      <section>
+        <form id="change-password-form" class="border">
+          <fieldset>
+            <legend>Change password!</legend>
+
+            <label for="old-password">Old password</label>
+            <input id="old-password" name="passwords[old]" type="password" placeholder="Old Password">
+
+            <label for="new-password">New password</label>
+            <input id="new-password" name="passwords[new]" type="password" placeholder="New Password">
+
+            <input type="submit" value="Change Password!">
+          </fieldset>
+        </form>
+      </section>
+      <!-- Sign out section -->
+    <section>
+      <form id="sign-out-form" class="border">
+        <fieldset>
+          <legend>See yeah next time!</legend>
+
+          <input id="sign-out-button" type="submit" name="Sign out!" value="Sign out!">
+        </fieldset>
+      </form>
+    </section>
+    <!-- New game section -->
+    <section>
+      <form id="new-game-form" class="border">
+        <fieldset>
+          <legend>Lets get this game started!</legend>
+
+          <input id="new-game-button" type="submit" value="Start playing!">
+        </fieldset>
+      </form>
+    </section>
+    <!-- Get game stats section -->
+    <section>
+      <form id="user-game-stats-form" class="border">
+        <fieldset>
+          <legend>Check out your game stats here!</legend>
+
+          <input id="user-game-stats-button" type="submit" value="Game stats!">
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Game board section -->
+    <div id="game-board-form" class="container">
+      <div class="row h-100">
+
+        <div id="0" class="col-md-4 box" data-cell-index="0"></div>
+        <div id="1" class="col-md-4 box" data-cell-index="1"></div>
+        <div id="2" class="col-md-4 box" data-cell-index="2"></div>
+
+        <div id="3" class="col-md-4 box" data-cell-index="3"></div>
+        <div id="4" class="col-md-4 box" data-cell-index="4"></div>
+        <div id="5" class="col-md-4 box" data-cell-index="5"></div>
+
+        <div id="6" class="col-md-4 box" data-cell-index="6"></div>
+        <div id="7" class="col-md-4 box" data-cell-index="7"></div>
+        <div id="8" class="col-md-4 box" data-cell-index="8"></div>
+
+      </div>
+    </div>
+
+    </body>
+</html>
